@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .counter-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    #counter {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #007bff;
+    }
+    
+    .button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="counter-container">
+    <h1>Color Counter</h1>
+    
+    <div id="counter">0</div>
+    
+    <button id="incrementButton" class="button">Increment</button>
+    <button id="decrementButton" class="button">Decrement</button>
+    <button id="clearButton" class="button">Clear</button>
+  </div>
+  
+  <script>
+    const counter = document.getElementById('counter');
+    const incrementButton = document.getElementById('incrementButton');
+    const decrementButton = document.getElementById('decrementButton');
+    const clearButton = document.getElementById('clearButton');
+    let count = 0;
+    
+    incrementButton.addEventListener('click', () => {
+      count++;
+      counter.textContent = count;
+    });
+    
+    decrementButton.addEventListener('click', () => {
+      if (count > 0) {
+        count--;
+        counter.textContent = count;
+      }
+    });
+    
+    clearButton.addEventListener('click', () => {
+      count = 0;
+      counter.textContent = count;
+    });
+  </script>
+
+</body>
+</html>
